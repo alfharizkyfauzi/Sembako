@@ -1,0 +1,175 @@
+.slider1 {
+    margin-top: -20px;
+    height: 50vh;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.slider1 .slide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    display: none;
+    padding: 0 80px;
+    animation: slide 2s ease;
+    background-color: seashell;
+}
+
+.slider1 .slide img {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    padding: 0 200px;
+    height: 70%;
+
+}
+
+.slider1 .slide.active {
+    display: flex;
+}
+
+@keyframes slide {
+    0% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+
+}
+
+.slider1 .container {
+    flex-grow: 1;
+}
+
+.slider1 .caption {
+    width: 50%;
+}
+
+.slider1 .caption h1 {
+    font-size: 42px;
+    color: #000000;
+    margin: 0;
+
+}
+
+.slider1 .slide.active .caption h1 {
+    opacity: 0;
+    animation: captionText .5s ease forwards;
+    animation-delay: 1s;
+}
+
+.slider1 .caption p {
+    font-size: 18px;
+    margin: 15px 0 30px;
+    color: #222222;
+}
+
+.slider1 .slide.active .caption p {
+    opacity: 0;
+    animation: captionText .5s ease forwards;
+    animation-delay: 1.2s;
+}
+
+.slider1 .caption a {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #FF5722;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.slider1 .slide.active .caption a {
+    opacity: 0;
+    animation: captionText .5s ease forwards;
+    animation-delay: 1.4s;
+}
+
+.slider1 .caption a:hover {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #000;
+    text-decoration: none;
+    color: #fff;
+}
+
+
+@keyframes captionText {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.slider1 .controls .prev,
+.slider1 .controls .next {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    height: 40px;
+    width: 40px;
+    color: #FF5722;
+    opacity: 50%;
+    margin: -20px 10px 0 10px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 60px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.slider1 .controls .prev:hover,
+.slider1 .controls .next:hover {
+    color: #000;
+}
+
+.slider1 .controls .prev {
+    left: 0;
+}
+
+.slider1 .controls .next {
+    right: 0;
+}
+
+.slider1 .indicator {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    z-index: 2;
+    transform: translateX(-50%);
+}
+
+.slider1 .indicator div {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    color: #FF5722;
+    opacity: 50%;
+    font-size: 0;
+    background-color: #FF5722;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 3px;
+}
+
+.slider1 .indicator div.active {
+    background-color: #000;
+    color: #000000;
+}
